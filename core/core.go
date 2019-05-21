@@ -1,4 +1,4 @@
-package main
+package core
 
 import (
 	"fmt"
@@ -17,12 +17,7 @@ type Dst struct {
 	c byte
 }
 
-func main(){
-	array()
-	funcName()
-}
-
-func array() {
+func ArrayTest() {
 	str1 := []string{"1", "2", "3", "4"}
 	for index, value := range str1 {
 		fmt.Println(index, ":", value)
@@ -34,7 +29,7 @@ func array() {
 	p("rocky")
 }
 
-func funcName() {
+func CopyTest() {
 	src := &Src{3, "hello", '2'}
 	var dst Dst
 	gotools.StructCopy(&dst, src)
@@ -43,4 +38,13 @@ func funcName() {
 
 func p(name string){
 	fmt.Println("Hello," + name)
+}
+
+/// https://studygolang.com/articles/10751
+func MakeTest() {
+	a := make([]int, 10, 20)
+	fmt.Printf("%d, %d\n", len(a), cap(a))
+	fmt.Println(a)
+	b := a[:cap(a)]
+	fmt.Println(b)
 }
