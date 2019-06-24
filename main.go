@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gDemo/gorm"
+	"gDemo/core"
 	_ "gDemo/test"
 )
 
@@ -9,9 +9,14 @@ func main(){
 	//core.ArrayTest()
 	//core.CopyTest()
 	//core.MakeTest()
+	//core.SelectTest()
+	//core.SelectTest1()
+	//core.SelectTest2()
+	//core.Test_Sleep()
+	core.Test_Tick()
 	//fmt.Printf("hello world\n")
 
-	gorm.DbConnection()
+	//gorm.DbConnection()
 	//gorm.DbConnection1()
 	//gorm.DbConnection2()
 
