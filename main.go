@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gDemo/core"
+	"gDemo/json"
 	_ "gDemo/test"
 )
 
@@ -13,7 +13,7 @@ func main(){
 	//core.SelectTest1()
 	//core.SelectTest2()
 	//core.Test_Sleep()
-	core.Test_Tick()
+	//core.Test_Tick()
 	//fmt.Printf("hello world\n")
 
 	//gorm.DbConnection()
@@ -26,5 +26,18 @@ func main(){
 	//m.InsertMachineryRoom(299,"机房299")
 	//m.UpdateMachineryRoom(299,"机房299 改变")
 	//m.DeleteMachineryRoom(299,"机房299 改变")
+
+	json.JsonTest()
+	json.Check()
+	json.MyJsonTest()
+	json.ProjectTest1()
+
+	json.HttpQueryAllUsers("", "")
+	json.HttpQueryAllUsers("URtc-h4r1txxy","26")
+	json.UserTest()
+
+	json.ArrayTest()
 }
+
+
 
