@@ -24,7 +24,7 @@ func TestPoint(t *testing.T) {
 }
 
 func TestString(t *testing.T){
-	var s string  /// 字符串初始化为空字符串
+	var s string  /// 字符串初始化为值类型， 默认值是空字符串
 	t.Log("*" + s + "*")
 	t.Log(len(s))
 	if s == "" {
