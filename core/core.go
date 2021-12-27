@@ -2,7 +2,6 @@ package core
 
 import (
 	"fmt"
-	"gDemo/copyStruct"
 )
 
 type Src struct {
@@ -36,7 +35,7 @@ func CopyTest() {
 	fmt.Println(dst)
 }
 
-func p(name string){
+func p(name string) {
 	fmt.Println("Hello," + name)
 }
 
