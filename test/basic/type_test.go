@@ -16,15 +16,15 @@ func TestImplicit(t *testing.T) {
 }
 
 func TestPoint(t *testing.T) {
-	a :=2
+	a := 2
 	aPtr := &a
 	// aPtr = aPtr + 1 /// 不支持指针运算
 	t.Log(a, aPtr)
 	t.Logf("%T %T", a, aPtr)
 }
 
-func TestString(t *testing.T){
-	var s string  /// 字符串初始化为值类型， 默认值是空字符串
+func TestString(t *testing.T) {
+	var s string /// 字符串初始化为值类型， 默认值是空字符串
 	t.Log("*" + s + "*")
 	t.Log(len(s))
 	if s == "" {
