@@ -11,8 +11,8 @@ import (
 func main() {
 	coreMethod()
 	// gormMethod()
-	mMethod()
-	jsonMethod()
+	// mMethod()
+	// jsonMethod()
 }
 
 func coreMethod() {
