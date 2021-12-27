@@ -23,6 +23,7 @@ func coreMethod() {
 	core.SelectTest1()
 	core.SelectTest2()
 	core.Test_Sleep()
+	core.FuctionTest()
 	// core.Test_Tick()
 	fmt.Printf("hello world\n")
 }
