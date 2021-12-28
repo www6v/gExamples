@@ -2,24 +2,25 @@ package models
 
 import (
 	"fmt"
-	"github.com/jinzhu/gorm"
 	model "gDemo/db"
 	"strconv"
+
+	"github.com/jinzhu/gorm"
 
 	//"uframework/common"
 	//"uframework/log"
 
-	_ "github.com/jinzhu/gorm/dialects/sqlite"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
-func DescribeNode(topOrganizationId string,organizationId string, channel string) ([]model.TDescribeNode, error) {
-	node  := queryNode(topOrganizationId, organizationId, channel)
+func DescribeNode(topOrganizationId string, organizationId string, channel string) ([]model.TDescribeNode, error) {
+	node := queryNode(topOrganizationId, organizationId, channel)
 
 	return node, nil
 }
 
-func queryNode(topOrganizationId string, organizationId string, channel string) ( []model.TDescribeNode ) {
+func queryNode(topOrganizationId string, organizationId string, channel string) []model.TDescribeNode {
 	db := dbConnect()
 
 	var dns []model.TDescribeNode
@@ -29,43 +30,43 @@ func queryNode(topOrganizationId string, organizationId string, channel string) 
 	return dns
 }
 
-func QueryMachineryRoom(MachineryId int)  model.TMachineryRoom {
+func QueryMachineryRoom(MachineryId int) model.TMachineryRoom {
 	db := dbConnect()
 
 	var tmr model.TMachineryRoom
 	db.Where("machinery_id = ?", MachineryId).First(&tmr)
 
-	fmt.Println( tmr.OcName)
+	fmt.Println(tmr.OcName)
 
 	return tmr
 }
 
-func InsertMachineryRoom(MachineryId int, Name string)  bool {
+func InsertMachineryRoom(MachineryId int, Name string) bool {
 	db := dbConnect()
 
 	tmr := model.TMachineryRoom{
-		MachineryId:MachineryId,
-		OcName:Name,
+		MachineryId: MachineryId,
+		OcName:      Name,
 	}
 	inserted := db.NewRecord(tmr)
 	db.Create(&tmr)
 	inserted1 := db.NewRecord(tmr)
 
-	fmt.Println( inserted )
-	fmt.Println( inserted1 )
+	fmt.Println(inserted)
+	fmt.Println(inserted1)
 
-	return  inserted
+	return inserted
 }
 
-func UpdateMachineryRoom(MachineryId int, Name string)   {
+func UpdateMachineryRoom(MachineryId int, Name string) {
 	db := dbConnect()
 
 	tmr := model.TMachineryRoom{
-		MachineryId:MachineryId,
+		MachineryId: MachineryId,
 	}
 	db.Where(&tmr).First(&tmr)
 
-    fmt.Println(strconv.Itoa(tmr.Id) +":"+ strconv.Itoa(tmr.MachineryId)+":"+  tmr.OcName)
+	fmt.Println(strconv.Itoa(tmr.Id) + ":" + strconv.Itoa(tmr.MachineryId) + ":" + tmr.OcName)
 
 	//tmr.MachineryId = MachineryId
 	tmr.OcName = Name
@@ -73,12 +74,11 @@ func UpdateMachineryRoom(MachineryId int, Name string)   {
 	db.Save(&tmr)
 }
 
-
-func DeleteMachineryRoom(MachineryId int, Name string)   {
+func DeleteMachineryRoom(MachineryId int, Name string) {
 	db := dbConnect()
 
 	tmr := model.TMachineryRoom{
-		MachineryId:MachineryId,
+		MachineryId: MachineryId,
 	}
 	db.Where(&tmr).First(&tmr)
 
@@ -111,11 +111,8 @@ func dbConnect() *gorm.DB {
 	return db
 }
 
-
 //注册数据库表
 var TABLES = []interface{}{
 	&model.TDescribeNode{},
 	&model.TMachineryRoom{},
 }
-
-

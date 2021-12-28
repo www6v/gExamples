@@ -13,39 +13,35 @@ func SelectTest() {
 
 	go func() {
 
-		time.Sleep(4*time.Second)
+		time.Sleep(4 * time.Second)
 		close(c)
 	}()
 
 	go func() {
 
 		//time.Sleep(3*time.Second)
-		time.Sleep(5*time.Second)
+		time.Sleep(5 * time.Second)
 		ch1 <- 3
 	}()
 
 	go func() {
 
 		//time.Sleep(3*time.Second)
-		time.Sleep(5*time.Second)
+		time.Sleep(5 * time.Second)
 		ch2 <- 5
 	}()
 
 	fmt.Println("Blocking on read...")
 	select {
-	case <- c:
-
+	case <-c:
 		fmt.Printf("Unblocked %v later.\n", time.Since(start))
-
-	case <- ch1:
-
+	case <-ch1:
 		fmt.Printf("ch1 case...")
-	case <- ch2:
-
+	case <-ch2:
 		fmt.Printf("ch2 case...")
-	//default:
-	//
-	//	fmt.Printf("default go...")
+		//default:
+		//
+		//	fmt.Printf("default go...")
 	}
 }
 
@@ -56,17 +52,17 @@ var numbers = []int{1, 2, 3, 4, 5}
 
 func SelectTest1() {
 
-		select {
-		case getChan(0) <- getNumber(2):
+	select {
+	case getChan(0) <- getNumber(2):
 
-			fmt.Println("1th case is selected.")
-		case getChan(1) <- getNumber(3):
+		fmt.Println("1th case is selected.")
+	case getChan(1) <- getNumber(3):
 
-			fmt.Println("2th case is selected.")
-		default:
+		fmt.Println("2th case is selected.")
+	default:
 
-			fmt.Println("default!.")
-		}
+		fmt.Println("default!.")
+	}
 }
 
 func getNumber(i int) int {
@@ -88,14 +84,11 @@ func SelectTest2() {
 	ch2 <- 5
 
 	select {
-	case <- ch1:
-
+	case <-ch1:
 		fmt.Println("ch1 selected.")
-
 		break
-
 		fmt.Println("ch1 selected after break")
-	case <- ch2:
+	case <-ch2:
 
 		fmt.Println("ch2 selected.")
 		fmt.Println("ch2 selected without break")

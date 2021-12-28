@@ -4,6 +4,7 @@ import (
 	"reflect"
 )
 
+// 深拷贝
 func DeepFields(ifaceType reflect.Type) []reflect.StructField {
 	var fields []reflect.StructField
 

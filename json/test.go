@@ -3,6 +3,7 @@ package json
 import (
 	"encoding/json"
 	"fmt"
+
 	"github.com/bitly/go-simplejson"
 )
 

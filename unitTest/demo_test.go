@@ -11,14 +11,14 @@ func TestFirstTry(t *testing.T) {
 	//var i = strconv.Itoa(1)
 }
 
-const(
-	Monday =  1
-	Tuesday = 2
+const (
+	Monday    = 1
+	Tuesday   = 2
 	Wednesday = 3
 )
 
-const(
-	Readable =  1<<2
+const (
+	Readable = 1 << 2
 	Writeable
 	Execable
 )
