@@ -16,6 +16,7 @@ func main() {
 }
 
 func coreMethod() {
+	core.StructTest()
 	core.ArrayTest()
 	core.CopyTest()
 	core.MakeTest()
