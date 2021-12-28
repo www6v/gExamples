@@ -2,6 +2,7 @@ package core
 
 import (
 	"fmt"
+	gotools "gDemo/copyStruct"
 )
 
 type Src struct {

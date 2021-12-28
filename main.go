@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"gDemo/core"
-	"gDemo/gorm"
 	"gDemo/json"
 	_ "gDemo/test"
 )
@@ -30,9 +29,9 @@ func coreMethod() {
 }
 
 func gormMethod() {
-	gorm.DbConnection()
-	gorm.DbConnection1()
-	gorm.DbConnection2()
+	// gorm.DbConnection()
+	// gorm.DbConnection1()
+	// gorm.DbConnection2()
 }
 
 func mMethod() {
