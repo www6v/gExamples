@@ -15,6 +15,7 @@ func main() {
 }
 
 func coreMethod() {
+	core.ContextTest()
 	core.StructTest()
 	core.ArrayTest()
 	core.CopyTest()
@@ -25,6 +26,7 @@ func coreMethod() {
 	core.Test_Sleep()
 	core.FuctionTest()
 	// core.Test_Tick()
+
 	fmt.Printf("hello world\n")
 }
 
