@@ -98,7 +98,8 @@ func ConfigTest() {
 		LearnersNext: nil, // only populated when used
 	}
 
-	quorum.MajorityConfig(c.Learners).String()
+	m := MajorityConfig{}
+	m.String()
 }
 
 /// etcd magority.go
