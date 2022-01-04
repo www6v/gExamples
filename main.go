@@ -15,19 +15,21 @@ func main() {
 }
 
 func coreMethod() {
-	core.PipelineTest()
-	core.ErrgroupTest()
-	core.ContextTest()
-	core.StructTest()
-	core.ArrayTest()
-	core.CopyTest()
-	core.MakeTest()
-	core.SelectTest()
-	core.SelectTest1()
-	core.SelectTest2()
-	core.Test_Sleep()
-	core.FuctionTest()
-	core.Test_Tick()
+	core.ConfigTest()
+
+	// core.PipelineTest()
+	// core.ErrgroupTest()
+	// core.ContextTest()
+	// core.StructTest()
+	// core.ArrayTest()
+	// core.CopyTest()
+	// core.MakeTest()
+	// core.SelectTest()
+	// core.SelectTest1()
+	// core.SelectTest2()
+	// core.Test_Sleep()
+	// core.FuctionTest()
+	// core.Test_Tick()
 
 	fmt.Printf("hello world\n")
 }
