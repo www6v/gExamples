@@ -89,14 +89,14 @@ type Config struct {
 
 func ConfigTest() {
 
-	c := Config{
-		Voters: quorum.JointConfig{
-			quorum.MajorityConfig{},
-			nil, // only populated when used
-		},
-		Learners:     nil, // only populated when used
-		LearnersNext: nil, // only populated when used
-	}
+	// c := Config{
+	// 	Voters: quorum.JointConfig{
+	// 		quorum.MajorityConfig{},
+	// 		nil, // only populated when used
+	// 	},
+	// 	Learners:     nil, // only populated when used
+	// 	LearnersNext: nil, // only populated when used
+	// }
 
 	m := MajorityConfig{}
 	m.String()

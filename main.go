@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"gDemo/core"
 	"gDemo/json"
 	_ "gDemo/test"
@@ -10,12 +9,12 @@ import (
 func main() {
 	coreMethod()
 	// gormMethod()
-	mMethod()
-	jsonMethod()
+	// mMethod()
+	// jsonMethod()
 }
 
 func coreMethod() {
-	core.ConfigTest()
+	// core.ConfigTest()
 
 	// core.PipelineTest()
 	// core.ErrgroupTest()
@@ -27,11 +26,11 @@ func coreMethod() {
 	// core.SelectTest()
 	// core.SelectTest1()
 	// core.SelectTest2()
-	// core.Test_Sleep()
 	// core.FuctionTest()
-	// core.Test_Tick()
 
-	fmt.Printf("hello world\n")
+	// core.Test_Sleep()
+	// core.Test_Tick()
+	core.Test_Timer()
 }
 
 func gormMethod() {
