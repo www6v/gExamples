@@ -2,20 +2,21 @@ package core
 
 import (
 	"fmt"
+	"testing"
 	"time"
 )
 
-func Test_Sleep() {
+func TestSleep(t *testing.T) {
 	for i := 0; i < 3; i++ {
 		fmt.Println("begin", time.Now().Format("2006-01-02_15:04:05"))
 		fmt.Println("Do something 1s")
 		time.Sleep(time.Second * 1)
 		fmt.Println("end", time.Now().Format("2006-01-02_15:04:05"))
-		time.Sleep(time.Second * 5)
+		time.Sleep(time.Second * 1)
 	}
 }
 
-func Test_Tick() {
+func TickTest(t *testing.T) {
 	t1 := time.NewTicker(5 * time.Second)
 	for {
 		select {
@@ -28,7 +29,7 @@ func Test_Tick() {
 	}
 }
 
-func Test_Timer() {
+func TestTimer(t *testing.T) {
 	/*
 	   用sleep实现定时器
 	*/

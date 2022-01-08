@@ -14,23 +14,9 @@ func main() {
 }
 
 func coreMethod() {
-	// core.ConfigTest()
-
-	// core.PipelineTest()
-	// core.ErrgroupTest()
-	// core.ContextTest()
-	// core.StructTest()
-	// core.ArrayTest()
-	// core.CopyTest()
-	// core.MakeTest()
-	// core.SelectTest()
-	// core.SelectTest1()
-	// core.SelectTest2()
-	// core.FuctionTest()
-
-	// core.Test_Sleep()
-	// core.Test_Tick()
-	core.Test_Timer()
+	core.ArrayTest()
+	core.CopyTest()
+	core.MakeTest()
 }
 
 func gormMethod() {

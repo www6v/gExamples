@@ -9,6 +9,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"testing"
 
 	"golang.org/x/sync/errgroup"
 )
@@ -28,7 +29,7 @@ func fakeSearch(kind string) Search {
 	}
 }
 
-func ErrgroupTest() {
+func TestErrgroup(t *testing.T) {
 	Google := func(ctx context.Context, query string) ([]Result, error) {
 		g, ctx := errgroup.WithContext(ctx)
 

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"strings"
+	"testing"
 )
 
 type MyInt int
@@ -24,11 +25,7 @@ type S struct {
 	n int
 }
 
-func main() {
-
-}
-
-func StructTest() {
+func TestStruct(test *testing.T) {
 	m := MyInt(17)
 	r := strings.NewReader("hello, go")
 	s := S{

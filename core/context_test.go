@@ -3,11 +3,12 @@ package core
 import (
 	"context"
 	"fmt"
+	"testing"
 	"time"
 )
 
 /// https://blog.csdn.net/yzf279533105/article/details/107290645
-func ContextTest() {
+func TestContext(t *testing.T) {
 	// 父context(利用根context得到)
 	ctx, cancel := context.WithCancel(context.Background())
 

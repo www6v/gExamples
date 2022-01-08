@@ -8,6 +8,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"testing"
 
 	"golang.org/x/sync/errgroup"
 )
@@ -15,7 +16,7 @@ import (
 // Pipeline demonstrates the use of a Group to implement a multi-stage
 // pipeline: a version of the MD5All function with bounded parallelism from
 // https://blog.golang.org/pipelines.
-func PipelineTest() {
+func TestPipeline(t *testing.T) {
 	m, err := MD5All(context.Background(), ".")
 	if err != nil {
 		log.Fatal(err)

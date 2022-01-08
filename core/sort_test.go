@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sort"
 	"strings"
+	"testing"
 
 	"go.etcd.io/etcd/raft/v3/quorum"
 )
@@ -87,7 +88,7 @@ type Config struct {
 	LearnersNext map[uint64]struct{}
 }
 
-func ConfigTest() {
+func TestConfig(t *testing.T) {
 
 	// c := Config{
 	// 	Voters: quorum.JointConfig{

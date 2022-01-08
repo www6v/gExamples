@@ -1,6 +1,8 @@
 package basic
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestArray(t *testing.T) {
 	var arr [3]int

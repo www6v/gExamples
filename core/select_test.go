@@ -2,10 +2,11 @@ package core
 
 import (
 	"fmt"
+	"testing"
 	"time"
 )
 
-func SelectTest() {
+func TestSelect(t *testing.T) {
 	start := time.Now()
 	c := make(chan interface{})
 	ch1 := make(chan int)
@@ -50,7 +51,7 @@ var ch2 chan int
 var chs = []chan int{ch1, ch2}
 var numbers = []int{1, 2, 3, 4, 5}
 
-func SelectTest1() {
+func Test1Select(t *testing.T) {
 
 	select {
 	case getChan(0) <- getNumber(2):
@@ -76,7 +77,7 @@ func getChan(i int) chan int {
 	return chs[i]
 }
 
-func SelectTest2() {
+func Test2Select(t *testing.T) {
 	ch1 := make(chan int, 1)
 	ch2 := make(chan int, 1)
 
