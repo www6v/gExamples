@@ -3,6 +3,7 @@ package json
 import (
 	"encoding/json"
 	"fmt"
+	"testing"
 
 	"github.com/bitly/go-simplejson"
 )
@@ -19,7 +20,7 @@ type personInfo1 struct {
 	C     string
 }
 
-func JsonTest() {
+func TestJson(t *testing.T) {
 	// 创建数据
 	p := personInfo{Name: "Piao", Age: 10, Email: "piaoyunsoft@163.com"}
 

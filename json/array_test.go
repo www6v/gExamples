@@ -1,17 +1,19 @@
 package json
 
- import (
- 	"encoding/json"
- 	"fmt"
- 	)
+import (
+	"encoding/json"
+	"fmt"
+	"testing"
+)
+
 type Transport struct {
-	Time string
-    MAC string
-    Id string
-    Rssid string
+	Time  string
+	MAC   string
+	Id    string
+	Rssid string
 }
 
-func ArrayTest() {
+func TestArray(t *testing.T) {
 	var st []Transport
 	t1 := Transport{Time: "22", MAC: "33", Id: "44", Rssid: "55"}
 	st = append(st, t1)
@@ -22,7 +24,9 @@ func ArrayTest() {
 	var str = string(buf)
 	var st1 []Transport
 	err := json.Unmarshal([]byte(str), &st1)
-	if err != nil { fmt.Println("some error") }
+	if err != nil {
+		fmt.Println("some error")
+	}
 	fmt.Println(st1)
 	fmt.Println(st1[0].Time)
 
@@ -30,5 +34,4 @@ func ArrayTest() {
 	json.Unmarshal([]byte(str), &Msg)
 	fmt.Println(Msg)
 
-	}
-
+}

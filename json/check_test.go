@@ -1,8 +1,9 @@
 package json
 
 import (
-"encoding/json"
-"fmt"
+	"encoding/json"
+	"fmt"
+	"testing"
 )
 
 type Person struct {
@@ -16,7 +17,7 @@ type Class struct {
 	stuff []Person
 }
 
-func Check() {
+func TestCheck(t *testing.T) {
 
 	pa := Person{ID: "001", Name: "赵大"}
 	pb := Person{"002", "刘二"}

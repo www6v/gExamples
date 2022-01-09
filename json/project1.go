@@ -25,13 +25,13 @@ const (
 	USER_KEY_PRE = "%242a%2410%24hxndLUX%2FnrHX34QGkF19DOFlAuy5dYyu7x%2Fi.ig1vkWbxGbRlD7iy"
 )
 
-func HttpQueryAllUsers(appid string, roomid string) []Users {
+func TestHttpQueryAllUsers(appid string, roomid string) []Users {
 	users1 := httpQueryUsers(USER_IP_PRE_1, appid, roomid)
 	users2 := httpQueryUsers(USER_IP_PRE_2, appid, roomid)
 	users3 := httpQueryUsers(USER_IP_PRE_3, appid, roomid)
 	users4 := httpQueryUsers(USER_IP_PRE_4, appid, roomid)
 
-	users := append( append( append(users1, users2...), users3...), users4...)
+	users := append(append(append(users1, users2...), users3...), users4...)
 	fmt.Println("---")
 	fmt.Println(users)
 	return users
@@ -44,7 +44,7 @@ func httpQueryUsers(userIp string, appid string, roomid string) []Users {
 		},
 	}
 	client := &http.Client{Transport: tr}
-	url := "https://" + userIp +":5005/getusers?appid=" + appid + "&roomid=" + roomid + "&key=" + USER_KEY_PRE
+	url := "https://" + userIp + ":5005/getusers?appid=" + appid + "&roomid=" + roomid + "&key=" + USER_KEY_PRE
 	resp, err := client.Get(url)
 	if err != nil {
 		fmt.Println("Get error:", err)
@@ -52,7 +52,6 @@ func httpQueryUsers(userIp string, appid string, roomid string) []Users {
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
-
 
 	var users []Users
 	userErr := json.Unmarshal([]byte(body), &users)

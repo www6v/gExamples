@@ -2,7 +2,6 @@ package main
 
 import (
 	"gDemo/core"
-	"gDemo/json"
 	_ "gDemo/test"
 )
 
@@ -34,14 +33,14 @@ func mMethod() {
 }
 
 func jsonMethod() {
-	json.JsonTest()
-	json.Check()
-	json.MyJsonTest()
-	json.ProjectTest1()
+	// json.JsonTest()
+	// json.Check()
+	// json.MyJsonTest()
+	// json.ProjectTest1()
 
-	json.HttpQueryAllUsers("", "")
-	json.HttpQueryAllUsers("URtc-h4r1txxy", "26")
-	json.UserTest()
+	// json.HttpQueryAllUsers("", "")
+	// json.HttpQueryAllUsers("URtc-h4r1txxy", "26")
+	// json.UserTest()
 
-	json.ArrayTest()
+	// json.ArrayTest()
 }

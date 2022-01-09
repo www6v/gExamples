@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
+	"testing"
 )
 
 type Data struct {
@@ -14,7 +15,6 @@ type Data struct {
 	AppStatue bool   `json:"AppStatue"`
 	UserID    string `json:"UserId"`
 }
-
 
 type MyJsonName struct {
 	Action string `json:"action"`
@@ -54,7 +54,7 @@ type MyJsonName struct {
 //}]
 //}
 
-func MyJsonTest() {
+func TestMyJson(t *testing.T) {
 	// 创建数据
 	//p := personInfo{Name: "Piao", Age: 10, Email: "piaoyunsoft@163.com"}
 
@@ -65,12 +65,12 @@ func MyJsonTest() {
 		UserID:    "37475",
 	})
 
-	p := MyJsonName {
-		Action : "queryAllProject",
-		Datas : datas,
-		Err:0,
-		Msg:"succ",
-		RPCID: "222",
+	p := MyJsonName{
+		Action: "queryAllProject",
+		Datas:  datas,
+		Err:    0,
+		Msg:    "succ",
+		RPCID:  "222",
 	}
 
 	// 序列化
@@ -99,7 +99,7 @@ func MyJsonTest() {
 func HttpQueryAllProject() []byte {
 	postRequestBody := " {\"action\":\"queryAllProject\",\"user_id\":\"\",\"rpc_id\":\"222\",\"data\":{ \"statue\":0 } }"
 
-	fmt.Println( "postRequestBody:" + postRequestBody)
+	fmt.Println("postRequestBody:" + postRequestBody)
 	//设置tls配置信息
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{
@@ -118,12 +118,11 @@ func HttpQueryAllProject() []byte {
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Println( string(body) )
+	fmt.Println(string(body))
 	return body
 }
 
-
-func ParseQueryAllProjectBody(body []byte)   MyJsonName {
+func ParseQueryAllProjectBody(body []byte) MyJsonName {
 	//data, _ := json.Marshal(&p)
 
 	var p1 MyJsonName
@@ -137,7 +136,6 @@ func ParseQueryAllProjectBody(body []byte)   MyJsonName {
 
 	return p1
 }
-
 
 func HttpQueryProject(appid string) []byte {
 	tr := &http.Transport{
@@ -154,6 +152,6 @@ func HttpQueryProject(appid string) []byte {
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Println( string(body) )
+	fmt.Println(string(body))
 	return body
 }
