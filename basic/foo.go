@@ -19,7 +19,7 @@ type Foo struct {
 	Name string
 }
 
-func init() {
+func Test1() {
 	f := &Foo{Id: 123, Name: "abc"}
 	fmt.Printf("init foo object: %v\n", f)
 }

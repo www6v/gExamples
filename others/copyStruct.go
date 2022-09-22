@@ -1,4 +1,4 @@
-package gotools
+package others
 
 import (
 	"reflect"

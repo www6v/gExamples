@@ -1,4 +1,4 @@
-package core
+package concurrent
 
 /**    errgroup
 Parallel illustrates the use of a Group for synchronizing a simple parallel task:
