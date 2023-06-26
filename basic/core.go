@@ -2,7 +2,7 @@ package basic
 
 import (
 	"fmt"
-	gotools "gDemo/copyStruct"
+	// gotools "gDemo/copyStruct"
 )
 
 type Src struct {
@@ -29,18 +29,18 @@ func ArrayTest() {
 	p("rocky")
 }
 
-func CopyTest() {
-	src := &Src{3, "hello", '2'}
-	var dst Dst
-	gotools.StructCopy(&dst, src)
-	fmt.Println(dst)
-}
+// func CopyTest() {
+// 	src := &Src{3, "hello", '2'}
+// 	var dst Dst
+// 	gotools.StructCopy(&dst, src)
+// 	fmt.Println(dst)
+// }
 
 func p(name string) {
 	fmt.Println("Hello," + name)
 }
 
-/// https://studygolang.com/articles/10751
+// / https://studygolang.com/articles/10751
 func MakeTest() {
 	a := make([]int, 10, 20)
 	fmt.Printf("%d, %d\n", len(a), cap(a))
