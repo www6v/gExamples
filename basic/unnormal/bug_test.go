@@ -24,6 +24,15 @@ func TestClosure(t *testing.T) {
 		}(v1)
 	}
 
+	// https://cloud.tencent.com/developer/article/2240620
+	////// fixed
+	for _, v := range data {
+		v := v
+		go func() {
+			fmt.Println(v)
+		}()
+	}
+
 	time.Sleep(3 * time.Second)
 }
 
