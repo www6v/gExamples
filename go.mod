@@ -4,12 +4,18 @@ go 1.20
 
 require (
 	github.com/bitly/go-simplejson v0.5.0
+	// github.com/pingcap/failpoint tisonkun-patch-1
+
+	github.com/google/gopacket v1.1.19
 	github.com/jinzhu/gorm v1.9.16
 	github.com/pkg/errors v0.9.1
 	github.com/stretchr/testify v1.8.4
 	go.etcd.io/etcd/raft/v3 v3.5.1
+	// "github.com/google/gopacket/layers"  v1.1.19
+	// "github.com/smallnest/go-network-programming/codec"
+	golang.org/x/net v0.11.0
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
-	// github.com/pingcap/failpoint tisonkun-patch-1
+// "golang.org/x/net/ipv4"  v0.11.0
 )
 
 require (
