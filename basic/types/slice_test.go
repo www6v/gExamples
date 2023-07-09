@@ -1,6 +1,9 @@
 package basic
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestSlice(t *testing.T) {
 	var s0 []int
@@ -33,8 +36,10 @@ func TestSliceShareMemory(t *testing.T) {
 		"Aar", "Mar", "Jar",
 		"Jar", "Aar", "Sar",
 		"Oar", "Nar", "Dar"}
+
 	Q2 := year[3:6]
 	t.Log(Q2, len(Q2), cap(Q2))
+
 	summer := year[5:8]
 	t.Log(summer, len(summer), cap(summer))
 	summer[0] = "Unknown"
@@ -48,4 +53,25 @@ func TestSliceCompare(t *testing.T) {
 	//if a==b { 报错
 	//
 	//}
+}
+
+// https://www.luozhiyun.com/archives/797
+func TestSliceIn100Mistake(t *testing.T) {
+	// s := make([]int, 3, 6)
+	// s[4] = 0 // panic
+
+	s1 := make([]int, 3, 6)
+	s2 := s1[1:3]
+	s1[1] = 2
+	s2 = append(s2, 3)
+	fmt.Println(s1) // [0 2 0]
+	fmt.Println(s2) // [2 0 3]
+
+	s1 = append(s1, 4)
+	fmt.Println(s1) // [0 2 0 4]
+	fmt.Println(s2) // [2 0 4]
+
+	s2 = append(s2, 5, 6, 7)
+	fmt.Println(s1) // [0 2 0 4]
+	fmt.Println(s2) // [2 0 4 5 6 7]
 }
